@@ -1,8 +1,8 @@
 [package]
 name = "uniswap_v3_math"
-rust-version = "1.82"
+rust-version = "1.88"
 version = "0.6.1"
-edition = "2021"
+edition = "2024"
 license = "MIT"
 description = "Uniswap V3 math in Rust"
 readme = "README.md"
@@ -12,11 +12,11 @@ keywords = ["uniswapV3", "math"]
 exclude = ["target/*", ".github/*", ".gitignore", "Uniswap/*"]
 
 [dependencies]
-alloy = { version = "1.0.3", features = [
+alloy = { version = "1.0.17", features = [
   "contract",
   "providers",
 ], optional = true }
-alloy-primitives = "1.1.0"
+alloy-primitives = "1.2.1"
 eyre = "0.6"
 thiserror = "2.0"
 

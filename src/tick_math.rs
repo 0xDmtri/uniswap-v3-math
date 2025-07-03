@@ -2,10 +2,10 @@ use alloy_primitives::{I256, U256};
 use std::ops::{BitOr, Neg, Shl, Shr};
 
 use crate::{
-    error::UniswapV3MathError, U256_1, U256_1024, U256_127, U256_128, U256_131072, U256_15,
-    U256_16, U256_16384, U256_2, U256_2048, U256_255, U256_256, U256_262144, U256_3, U256_32,
-    U256_32768, U256_4, U256_4096, U256_5, U256_512, U256_524288, U256_6, U256_64, U256_65536,
-    U256_7, U256_8, U256_8192, U256_MAX_TICK,
+    U256_1, U256_2, U256_3, U256_4, U256_5, U256_6, U256_7, U256_8, U256_15, U256_16, U256_32,
+    U256_64, U256_127, U256_128, U256_255, U256_256, U256_512, U256_1024, U256_2048, U256_4096,
+    U256_8192, U256_16384, U256_32768, U256_65536, U256_131072, U256_262144, U256_524288,
+    U256_MAX_TICK, error::UniswapV3MathError,
 };
 
 pub const MIN_TICK: i32 = -887272;
@@ -346,11 +346,17 @@ mod test {
     pub fn test_get_tick_at_sqrt_ratio() {
         //throws for too low
         let result = get_tick_at_sqrt_ratio(MIN_SQRT_RATIO.sub(U256_1));
-        assert_eq!(result.unwrap_err().to_string(), "Second inequality must be < because the price can never reach the price at the max tick");
+        assert_eq!(
+            result.unwrap_err().to_string(),
+            "Second inequality must be < because the price can never reach the price at the max tick"
+        );
 
         //throws for too high
         let result = get_tick_at_sqrt_ratio(MAX_SQRT_RATIO);
-        assert_eq!(result.unwrap_err().to_string(), "Second inequality must be < because the price can never reach the price at the max tick");
+        assert_eq!(
+            result.unwrap_err().to_string(),
+            "Second inequality must be < because the price can never reach the price at the max tick"
+        );
 
         //ratio of min tick
         let result = get_tick_at_sqrt_ratio(MIN_SQRT_RATIO).unwrap();

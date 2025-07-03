@@ -2,7 +2,7 @@ use std::ops::{Add, BitAnd, BitOrAssign, BitXor, Div, Mul, MulAssign};
 
 use alloy_primitives::U256;
 
-use crate::{error::UniswapV3MathError, U256_1, U256_2, U256_3};
+use crate::{U256_1, U256_2, U256_3, error::UniswapV3MathError};
 
 // returns (uint256 result)
 pub fn mul_div(a: U256, b: U256, mut denominator: U256) -> Result<U256, UniswapV3MathError> {

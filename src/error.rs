@@ -17,9 +17,7 @@ pub enum UniswapV3MathError {
     #[error("Liquidity is 0")]
     LiquidityIsZero,
     //TODO: Update this, shield your eyes for now
-    #[error(
-        "require((product = amount * sqrtPX96) / amount == sqrtPX96 && numerator1 > product);"
-    )]
+    #[error("require((product = amount * sqrtPX96) / amount == sqrtPX96 && numerator1 > product);")]
     ProductDivAmount,
     #[error("Denominator is less than or equal to prod_1")]
     DenominatorIsLteProdOne,

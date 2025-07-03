@@ -10,7 +10,7 @@ pub use contract::*;
 mod contract {
     use crate::error::UniswapV3MathError;
     use crate::tick_bitmap::position;
-    use crate::{bit_math, U256_1};
+    use crate::{U256_1, bit_math};
     use alloy::providers::Provider;
     use alloy::sol;
     use alloy_primitives::{Address, BlockNumber, U256};
@@ -51,7 +51,7 @@ mod contract {
                     .call()
                     .await
                 {
-                    Ok(word) => U256::from(word._0),
+                    Ok(word) => U256::from(word),
                     Err(err) => return Err(UniswapV3MathError::MiddlewareError(err.to_string())),
                 }
             } else {
@@ -60,7 +60,7 @@ mod contract {
                     .call()
                     .await
                 {
-                    Ok(word) => U256::from(word._0),
+                    Ok(word) => U256::from(word),
                     Err(err) => return Err(UniswapV3MathError::MiddlewareError(err.to_string())),
                 }
             };
@@ -91,7 +91,7 @@ mod contract {
                     .call()
                     .await
                 {
-                    Ok(word) => U256::from(word._0),
+                    Ok(word) => U256::from(word),
                     Err(err) => return Err(UniswapV3MathError::MiddlewareError(err.to_string())),
                 }
             } else {
@@ -100,7 +100,7 @@ mod contract {
                     .call()
                     .await
                 {
-                    Ok(word) => U256::from(word._0),
+                    Ok(word) => U256::from(word),
                     Err(err) => return Err(UniswapV3MathError::MiddlewareError(err.to_string())),
                 }
             };

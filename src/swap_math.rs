@@ -152,9 +152,9 @@ pub fn compute_swap_step(
 #[cfg(test)]
 mod test {
 
+    use crate::U256_1;
     use crate::sqrt_price_math::{get_next_sqrt_price_from_input, get_next_sqrt_price_from_output};
     use crate::swap_math::compute_swap_step;
-    use crate::U256_1;
     use alloy_primitives::{I256, U256};
     use std::str::FromStr;
 
@@ -282,8 +282,7 @@ mod test {
         assert!(sqrt_p < price_target);
         //TODO:FIXME: failing
         println!(
-            "sqrtp: {:?}, price_after_whole output amount: {:?}",
-            sqrt_p, price_after_whole_output_amount
+            "sqrtp: {sqrt_p:?}, price_after_whole output amount: {price_after_whole_output_amount:?}",
         );
         assert_eq!(sqrt_p, price_after_whole_output_amount);
 

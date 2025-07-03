@@ -238,8 +238,8 @@ mod test {
     use alloy_primitives::U256;
 
     use crate::{
-        sqrt_price_math::{_get_amount_1_delta, get_next_sqrt_price_from_output, MAX_U160},
         U256_1, U256_2,
+        sqrt_price_math::{_get_amount_1_delta, MAX_U160, get_next_sqrt_price_from_output},
     };
 
     use super::{_get_amount_0_delta, get_next_sqrt_price_from_input};
