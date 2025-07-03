@@ -1,5 +1,4 @@
-use crate::U256_1;
-use crate::{bit_math, error::UniswapV3MathError};
+use crate::{U256_1, bit_math, error::UniswapV3MathError};
 use alloy_primitives::U256;
 use std::collections::HashMap;
 
@@ -11,9 +10,9 @@ mod contract {
     use crate::error::UniswapV3MathError;
     use crate::tick_bitmap::position;
     use crate::{U256_1, bit_math};
-    use alloy::providers::Provider;
-    use alloy::sol;
     use alloy_primitives::{Address, BlockNumber, U256};
+    use alloy_provider::Provider;
+    use alloy_sol_macro::sol;
     use std::sync::Arc;
 
     sol! {
